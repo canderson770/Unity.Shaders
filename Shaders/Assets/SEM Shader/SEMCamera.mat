@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SEMCamera
+  m_Shader: {fileID: 4800000, guid: a979a43fdf0617b4083915ff512861a9, type: 3}
+  m_ShaderKeywords: _GRAYSCALEON_ON _SPEED2_ON _SPEED_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 8400000, guid: 909bade84efd44b4fa5a9441ecef3b38, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 686c7c117e9246b4ab1bb7db2f4a4e22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BottomClarity: 4
+    - _GrayScaleOn: 1
+    - _ScanPos: 0.6813841
+    - _Speed: 1
+    - _TopClarity: 1
+    m_Colors:
+    - _Color: {r: 0, g: 0.7, b: 1, a: 0.2}

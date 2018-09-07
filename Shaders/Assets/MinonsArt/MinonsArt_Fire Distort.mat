@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MinonsArt_Fire Distort
+  m_Shader: {fileID: 4800000, guid: 4bebe91a298ca2c4883a211f1177b62e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DistortTex:
+        m_Texture: {fileID: 2800000, guid: 7c3d26012a83b5645900e50b752e5320, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 8d3b8af6b1d360b468f85a20ee939a6d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShapeTex:
+        m_Texture: {fileID: 2800000, guid: 2e00ed367ebd03b43bcc7109bc2c687c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - SHAPE: 0
+    - SHAPEX: 0
+    - _Distort: 0.374
+    - _Edge: 0.03
+    - _Hard: 6
+    - _Height: 0.93
+    - _Offset: 0.61
+    - _ScrollX: 6.2
+    - _ScrollY: 4.1
+    m_Colors:
+    - _ColorA: {r: 0.8161765, g: 0.2640571, b: 0.2640571, a: 1}
+    - _ColorB: {r: 0.034482956, g: 0, b: 1, a: 1}
+    - _TintA: {r: 0.5514706, g: 0.3730536, b: 0.3730536, a: 1}
+    - _TintB: {r: 0.34221438, g: 0.22783303, b: 0.63235295, a: 1}
