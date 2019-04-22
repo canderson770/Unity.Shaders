@@ -35,12 +35,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EdgeWidth: 0.095
+    - _EdgeWidth: 0
     - _NoiseScale: 0.95
-    - _RimPower: 5.6
-    - _Scale: 0.8
+    - _RimPower: 7.59
+    - _Scale: 0.22
     - _SideScale: 1
-    - _TopSpread: 0.58
+    - _TopSpread: 1
     m_Colors:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _RimColor: {r: 0.38235295, g: 0.38235295, b: 0.38235295, a: 1}

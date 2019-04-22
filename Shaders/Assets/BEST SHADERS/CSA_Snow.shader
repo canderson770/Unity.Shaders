@@ -1,8 +1,9 @@
-﻿Shader "CSA/Snow/Snow" 
+Shader "CSA/Snow/Snow" 
 {
     Properties 
     {
 		_Tess("Tessellation", Range(1,64)) = 4
+		_TessMax("Max Distance", Range(10,100)) = 25
 
     	_Color ("Color", Color) = (1, 1, 1, 1)
         _MainTex ("Main Map", 2D) = "white" {}
@@ -45,6 +46,7 @@
 	        uniform sampler2D _MainTex, _BumpMap, _SnowTex, _SnowBump, _PaintMap;
 	        uniform float _SnowAmount, _SnowDepth, _BumpScale, _SnowBumpScale, _MatchTiling, _SnowMatchTiling;
 	        uniform float3 _SnowDirection;
+			uniform float _TessMax;
 	 
 	        struct Input 
 	        {
@@ -76,8 +78,8 @@
 			float4 tessDistance(appdata v0, appdata v1, appdata v2) 
 			{
 				float minDist = 10.0;
-				float maxDist = 25.0;
-				return UnityDistanceBasedTess(v0.vertex, v1.vertex, v2.vertex, minDist, maxDist, _Tess);
+				//float maxDist = 25.0;
+				return UnityDistanceBasedTess(v0.vertex, v1.vertex, v2.vertex, minDist, _TessMax, _Tess);
 			}
 
 	        Input vert (inout appdata v)

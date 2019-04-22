@@ -1,4 +1,4 @@
-﻿Shader "Custom/SnowExample" {
+Shader "Custom/SnowExample" {
 	Properties{
 		_Tess("Tessellation", Range(1,64)) = 4
 

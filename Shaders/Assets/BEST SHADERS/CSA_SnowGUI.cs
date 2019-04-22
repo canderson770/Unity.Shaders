@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 public class CSA_SnowGUI : ShaderGUI
@@ -20,6 +20,10 @@ public class CSA_SnowGUI : ShaderGUI
         MaterialProperty tess = FindProperty("_Tess");
         if (tess != null)
             m_editor.ShaderProperty(tess, MakeLabel(tess));
+
+        MaterialProperty tessM = FindProperty("_TessMax");
+        if (tess != null)
+            m_editor.ShaderProperty(tessM, MakeLabel(tessM));
         // ======================================================================
 
         GUILayout.Label("Main Maps", EditorStyles.boldLabel);

@@ -32,7 +32,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ALPHA: 1
-    - _DisAmount: 0.45
+    - _DisAmount: 0.48
     - _DisLineWidth: 0
     - _LIGHTMAP: 0
     - _NScale: 0.23

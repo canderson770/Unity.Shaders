@@ -48,7 +48,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 199f3e65005c941478737f7242b2bdea, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
         m_Texture: {fileID: 2800000, guid: f974dfc98a2df2b438cc56031c2aa843, type: 3}
@@ -64,7 +64,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SnowTex:
         m_Texture: {fileID: 2800000, guid: 199f3e65005c941478737f7242b2bdea, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Scale: {x: 300, y: 300}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
@@ -77,16 +77,17 @@ Material:
     - _NormalScale: 1
     - _SnowAmount: 0.398
     - _SnowBumpScale: 1
-    - _SnowDepth: 0
+    - _SnowDepth: 0.15
     - _SnowLevel: 0.47
     - _SnowMatchTiling: 0
-    - _Tess: 30
+    - _Tess: 64
+    - _TessMax: 100
     - _ZTest: 2
     m_Colors:
     - _BotColor: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 0.42647058, g: 0.35112455, b: 0.2163711, a: 1}
     - _LayerDirection: {r: 0, g: 1, b: 0, a: 1}
     - _SnowColor: {r: 0.7205882, g: 0.7205882, b: 0.7205882, a: 1}
-    - _SnowDirection: {r: 0, g: 1, b: -0.5, a: 0}
+    - _SnowDirection: {r: 0, g: 5, b: 0, a: 0}
     - _SnowPrintsColor: {r: 1, g: 1, b: 1, a: 1}
     - _TopColor: {r: 1, g: 1, b: 1, a: 0}

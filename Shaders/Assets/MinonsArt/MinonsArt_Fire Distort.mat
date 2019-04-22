@@ -36,8 +36,8 @@ Material:
     - _Distort: 0.374
     - _Edge: 0.03
     - _Hard: 6
-    - _Height: 0.93
-    - _Offset: 0.61
+    - _Height: 0.75
+    - _Offset: -0.53
     - _ScrollX: 6.2
     - _ScrollY: 4.1
     m_Colors:

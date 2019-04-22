@@ -6,27 +6,27 @@ public class PaintBrush : MonoBehaviour
 {
     public float updateInterval = .5f;
     public int resolution = 512;
-    Texture2D whiteMap;
+    private Texture2D whiteMap;
     public float brushSize;
     public Texture2D brushTexture;
-//    public Color brushColor = Color.gray;
-    Vector2 stored;
+    //public Color brushColor = Color.gray;
+    private Vector2 stored;
     public static Dictionary<Collider, RenderTexture> paintTextures = new Dictionary<Collider, RenderTexture>();
     private Vector3 position;
 
-    void Start()
+    private void Start()
     {
         CreateClearTexture();// clear white texture to draw on
         position = transform.position;
         StartCoroutine(Footprints());
     }
 
-    void OnCollisionEnter()
+    private void OnCollisionEnter()
     {
         print("hit");
     }
 
-    IEnumerator Footprints()
+    private IEnumerator Footprints()
     {
         while (true)
         {
@@ -35,7 +35,7 @@ public class PaintBrush : MonoBehaviour
                 Debug.DrawRay(transform.position, Vector3.down * .1f, Color.magenta);
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit))
-//        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) // delete previous and uncomment for mouse painting
+                //        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) // delete previous and uncomment for mouse painting
                 {
                     Collider coll = hit.collider;
 
@@ -62,7 +62,7 @@ public class PaintBrush : MonoBehaviour
         }
     }
 
-    void DrawTexture(RenderTexture rt, float posX, float posY)
+    private void DrawTexture(RenderTexture rt, float posX, float posY)
     {
 
         RenderTexture.active = rt; // activate rendertexture for drawtexture;
@@ -77,14 +77,14 @@ public class PaintBrush : MonoBehaviour
 
     }
 
-    RenderTexture getWhiteRT()
+    private RenderTexture getWhiteRT()
     {
         RenderTexture rt = new RenderTexture(resolution, resolution, 32);
         Graphics.Blit(whiteMap, rt);
         return rt;
     }
 
-    void CreateClearTexture()
+    private void CreateClearTexture()
     {
         whiteMap = new Texture2D(1, 1);
         whiteMap.SetPixel(0, 0, Color.white);
