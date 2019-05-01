@@ -1,56 +1,58 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class LoadingScreen : MonoBehaviour 
+public class LoadingScreen : MonoBehaviour
 {
-	AsyncOperation operation;
+    private AsyncOperation operation;
 
-	public bool loadOnStart = false;
+    public bool loadOnStart = false;
     public bool autoTransition = false;
-	public Material dinoMat;
-	public float dinoHeight = 2.1f;
-	public float minLoadTime = 3;
+    public Material dinoMat;
+    public float dinoHeight = 2.1f;
+    public float minLoadTime = 3;
+    public float delay = 5;
 
-	public UnityEvent OnLoadReady;
+    public UnityEvent OnLoadReady;
 
-	void Start()
-	{
-		if(loadOnStart)
-			LoadLevel (SceneManager.GetActiveScene().buildIndex + 1);
-	}
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(delay);
+        if (loadOnStart)
+            LoadLevel(SceneManager.GetActiveScene().buildIndex);
+    }
 
-	public void LoadLevel(int sceneIndex)
-	{
-		StartCoroutine(Load(sceneIndex));
-	}
+    public void LoadLevel(int sceneIndex)
+    {
+        StartCoroutine(Load(sceneIndex));
+    }
 
-	IEnumerator Load(int sceneIndex)
-	{
-		operation = SceneManager.LoadSceneAsync (sceneIndex, LoadSceneMode.Single);
-		operation.allowSceneActivation = false;
+    private IEnumerator Load(int sceneIndex)
+    {
+        operation = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single);
+        operation.allowSceneActivation = false;
 
-		while (operation.progress < .9f || Time.timeSinceLevelLoad < minLoadTime)
-		{
-			float progress = Mathf.Clamp01 (Time.timeSinceLevelLoad / minLoadTime) * dinoHeight;
+        while (operation.progress < .9f || Time.timeSinceLevelLoad < minLoadTime)
+        {
+            float progress = Mathf.Clamp01(Time.timeSinceLevelLoad / minLoadTime) * dinoHeight;
 
-			if (dinoMat != null)
-				dinoMat.SetFloat ("_ConstructY", progress);
-			
-			yield return null;
-		}
-        		
+            if (dinoMat != null)
+                dinoMat.SetFloat("_ConstructY", progress);
+
+            yield return null;
+        }
+
         if (autoTransition)
             operation.allowSceneActivation = true;
         else
-            OnLoadReady.Invoke ();
-	}
+            OnLoadReady.Invoke();
+    }
 
-	public void FinishLoadScene()
-	{
-		operation.allowSceneActivation = true;
-	}
+    public void FinishLoadScene()
+    {
+        operation.allowSceneActivation = true;
+    }
 }
